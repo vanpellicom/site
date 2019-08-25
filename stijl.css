@@ -1,0 +1,224 @@
+body {
+	font-family: Arial;
+	font-size: 2rem;
+}
+
+h1 {
+	margin-bottom: 3rem;
+	font-size: 3rem;
+	color: black;
+}
+
+img.logolucas {
+	margin-bottom: 3rem;
+	width: 50%;
+}
+
+p {
+	margin-bottom: 3rem;
+	color: black;
+	font-size: 1.5rem;
+}
+
+.menu {
+	position: fixed;
+	top: 3rem;
+	right: 3rem;
+}
+
+.navigatieDarkLight a{
+	color: black;
+	text-decoration: none;
+	font-size: 2rem;
+	margin-right: 3rem;
+	padding: .3rem;
+}
+
+nav {
+	background-color: #8D8741;
+	width: 40%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	right: 0;
+	padding: 5rem;
+}
+
+nav.onzichtbaar {
+	display: none;
+}
+
+main {
+	min-height: 100vh;
+	padding: 3rem;
+}
+
+nav a {
+	display: block;
+	text-decoration: none;
+	color: white;
+	font-size: 2rem;
+	margin-bottom: 3rem;
+}
+
+body.dark {
+	background-color: #659DBD;
+}
+
+.dark h1, .dark p {
+	color: white;
+}
+
+.light {
+	background-color: #659DBD;
+	padding: 5px;
+}
+
+.dark nav a:nth-child(2) {
+	background-color: #659DBD;
+	color: white;
+	padding: 5px;
+}
+
+.dark nav a:nth-child(1) {
+	background-color: #8D8741;
+}
+
+
+/* img */
+
+@supports (display: grid) {
+  .imgRaster {
+    display: grid;
+    grid-template-columns: 1;
+    width: 80%;
+    margin-left: 20%;
+  }
+  .imgRaster img {
+    width:80%;
+  }
+  .img2, .img4, .img7 {
+    margin-top: -3em;
+    margin-left: 2em;
+    border: 5px solid #659DBD;
+    box-shadow: 2px 2px 5px #659DBD;
+    transform: rotate(2deg);
+  }
+  .img1, .img6, .img8 {
+    border: 5px solid #DAAD86;
+    margin-left: -1em;
+    box-shadow: 2px 2px 5px #DAAD86;
+  }
+  .img6 {
+    transform: rotate(-10deg);
+    margin-left: -2em;
+  }
+  .img3, .img5 {
+    margin-top: -2em;
+    margin-left: -2em;
+    border: 5px solid #FBEEC1;
+    box-shadow: 2px 2px 5px #FBEEC1;
+  }
+
+  @media(min-width: 950px) {
+    .imgRaster {
+      display: grid;
+      grid-template-columns:repeat(2, 1fr);
+      grid-template-areas:
+        "afbeelding1 afbeelding3"
+        "afbeelding2 afbeelding4"
+        "afbeelding5 afbeelding6"
+        "afbeelding7 afbeelding8";
+      margin-left: 15%;
+      grid-gap: 10px;
+    }
+    .imgRaster .img1 { grid-area: afbeelding1 ; }
+    .imgRaster .img2 { grid-area: afbeelding2 ; transform: rotate(90deg) ; margin-top: 7.5em ; transition-duration: 1.5s; }
+    .imgRaster .img3 { grid-area: afbeelding3 ; }
+    .imgRaster .img4 { grid-area: afbeelding4 ; transform: rotate(90deg) ; margin-top: 7.5em ; transition-duration: 1.5s; }
+    .imgRaster .img5 { grid-area: afbeelding5 ; }
+    .imgRaster .img6 { grid-area: afbeelding6 ; transform: rotate(0deg) ; }
+    .imgRaster .img7 { grid-area: afbeelding7 ; transform: rotate(0deg) ;}
+    .imgRaster .img8 { grid-area: afbeelding8 ; transform: rotate(90deg) ; margin: 7.5em 0 10em 0 ; transition-duration: 1.5s }
+
+    .imgRaster .img2:hover, .imgRaster .img4:hover, .imgRaster .img8:hover{
+      transform: rotate(0deg);
+      transition-duration: 1.5s;
+      transform: scale(1.5)
+    }
+
+    .imgRaster img {
+      width: 80%;
+      margin-top: 0em;
+      margin-left: 0em;
+    }
+  }
+
+
+  @media(min-width: 1200px) {
+    .imgRaster img {
+      width: 80%;
+      margin-top: 0em;
+      margin-left: 10%;
+    }
+    .imgRaster .img1 { grid-area: afbeelding1 ; margin-bottom: 5em; }
+    .imgRaster .img2 { grid-area: afbeelding2 ; transform: rotate(0deg) ; margin: 10em 0 0 -5em ; transition-duration: 1.5s; }
+    .imgRaster .img3 { grid-area: afbeelding3 ; margin-bottom: 5em; }
+    .imgRaster .img4 { grid-area: afbeelding4 ; transform: rotate(0deg) ; margin: 10em 0 0 -5em ; transition-duration: 1.5s; }
+    .imgRaster .img5 { grid-area: afbeelding5 ; margin-bottom: 5em; }
+    .imgRaster .img6 { grid-area: afbeelding6 ; transform: rotate(0deg) ; margin: 0em 0 0 -4em ; }
+    .imgRaster .img7 { grid-area: afbeelding7 ; transform: rotate(0deg) ;}
+    .imgRaster .img8 { grid-area: afbeelding8 ; transform: rotate(0deg) ; margin: 10em 0 10em -5em ; transition-duration: 1.5s }
+		.imgRaster {
+			margin-top: 5em;
+		}
+	}
+  .imgRaster .img2:hover, .imgRaster .img4:hover, .imgRaster .img8:hover{
+      transition-duration: 1.5s;
+      transform: scale(1.2)
+  }
+}
+.dark .img2, .dark .img4, .dark .img7 {
+	border: 5px solid #8D8741;
+	box-shadow: 2px 2px 5px #8D8741;
+}
+
+.aboutMe {
+	margin-top: 5em;
+}
+
+/* about me page */
+.me {
+	width: 80%;
+	margin-left: 10%;
+	margin-top: 5em;
+	display: grid;
+	grid-template-columns: 30% 45%;
+	grid-gap: 5%;
+}
+.me img {
+	grid-column: 1;
+	width: 100%;
+}
+.me .textMe {
+	grid-column: 2;
+	margin-top: 5em;
+}
+@media(max-width:1200px) {
+	.me {
+		width: 80%;
+		margin-left: 10%;
+		margin-top: 5em;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 5%;
+	}
+	.me img {
+		grid-column: 1;
+		width: 98%;
+	}
+	.me .textMe {
+		grid-column: 1;
+		margin-top: 2em;
+	}
+}
